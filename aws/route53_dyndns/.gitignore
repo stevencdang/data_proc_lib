@@ -1,0 +1,8 @@
+# Python Generated Files #
+##########################
+*.pyc
+
+# Machine Specific Configurations #
+###################################
+boto.cfg
+.boto

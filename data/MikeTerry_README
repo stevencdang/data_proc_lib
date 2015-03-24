@@ -1,0 +1,57 @@
+The data set is split across two files. instances.csv is each response to a brainstorming question. trees.csv dictates the structure of the idea forests. A great deal of redundant information in encoded across both. This README summarizes the fields in each CSV.
+
+instances.csv
+=============
+Each record is for a single instance. However, each record also contains information associated with the idea node containing the instance and the category tree containing that idea node. The record also contains information associated with the brainstorming run.
+
+worker_id - a unique identifier for each worker
+question - the text of the question asked
+question_code - a string identifier for each brainstorming question
+post_date - the date the task was posted on Mechanical Turk. Not reliable.
+screenshot - a file name for a screenshot of the task. Not reliable.
+num_requested - the number of responses requested
+answer_num - the order the response appeared in the worker's brainstorming run
+answer - the natural language response given
+word_count - the number of words in the answer
+start_time - the time the answer started in milleseconds
+end_time - the time the answer ended in milleseconds
+answer_code - ignore field
+submit_datetime - date and time the HIT was submitted
+accept_datetime - date and time the HIT was accepted
+worker_num - a unique number identifier for each worker
+is_repeat_worker - whether this answer is in the second or later run completed by a single worker
+answer_id - an ID identifier for the answer used by the coding application
+idea - which idea node the instance belongs to
+answer_clus - I don't remember, I don't use this
+post_date_clus - I don't remember, I don't use this
+depth_in_subtree - the distance in hops from the root of the cluster tree to the idea associated with this instance
+height_in_subtree - the "level" of the tree the idea is in. Imagine the tree resting on its lowermost leaf, and then count up rows
+idea_label - a plain text label for the idea node
+idea_probability - the proportion of the corpus for this question that this idea represents
+is_leaf - whether the idea node is a leaf
+is_root - whether the idea node is a root
+num_children - the number of children of the idea node
+num_ideas_under - the number descendents of the idea node
+num_instances - the number of instances associated with the idea node
+num_instances_under - the number of instances associated with the idea node and all descendants
+num_nodes_under - same as num_ideas_under
+num_workers - the number of workers who came up with the same idea
+parent - the parent idea of the idea node
+subtree_probability - the probability of an instance being associated with the category tree
+subtree_root - the root of the idea's tree
+subtree_oscore - originality/novelty score for the category tree
+idea_oscore - originality/novelty score for the idea node
+time_spent - time spent generating the instance
+distance_from_similar - distance from a similar idea in a brainstorming run, according to a concept of riffing (an idea is a riff of another if it is a descendent or ancestor of that idea)
+is_inmix - whether the idea is ever riffed on AND is not a riff itself
+is_midmix - whether the idea  is ever riffed on
+is_outmix - whether the idea is a riff
+distance_from_inmix - distance from the original idea in the riff chain
+previous_similar_inmix - I don't remember, I don't use this
+inmix_index - I don't remember, I don't use this
+num_received - actual number of ideas received in this run
+
+
+trees.csv
+=========
+This CSV encodes the tree structure. Each record represents a single idea node. Every field is also in instances.csv, to make it easier to work with.

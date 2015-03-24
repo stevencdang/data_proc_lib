@@ -1,0 +1,8 @@
+### Mturk related ###
+#####################
+mturkconfig.json
+
+
+### Python Related ###
+######################
+*.pyc
